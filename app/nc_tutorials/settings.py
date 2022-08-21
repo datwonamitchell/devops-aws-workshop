@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
-# TASK 4 import os
 import os
 
 
@@ -29,7 +28,6 @@ SECRET_KEY = 'django-insecure-(j-#aqq@vs$3l#0(031z4_h(_*pa&ye#dt&x69_@(&a6(=+fpg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# TASK 4 add <ec2-instance-dns-address>, '0.0.0.0', 'localhost', '127.0.0.1'
 ALLOWED_HOSTS = ['ec2-52-20-227-77.compute-1.amazonaws.com', '0.0.0.0', 'localhost', '127.0.0.1']
 
 
@@ -127,12 +125,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-# TASK 4
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-else:
-    STATIC_ROOT = [os.path.join(BASE_DIR, "static")]
 
 STATIC_URL = '/static/'
 
